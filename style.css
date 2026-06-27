@@ -1,0 +1,204 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: darkblue; 
+    color: white;
+    text-align: center;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header {
+    margin-top: 5px;
+    background-color: #ff4500; 
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: 20px 0;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.main-one, .main-two {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+input {
+    font-size: 1.2rem;
+    width: 90%;
+    max-width: 450px;
+    height: 60px;
+    border-radius: 5px;
+    border: 2px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+.main-one input {
+    margin-right: 0; 
+}
+
+.btns {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btns button {
+    cursor: pointer;
+    width: 80%;
+    max-width: 900px;
+    height: 50px;
+    background-color: darkblue;
+    color: white;
+    font-size: x-large;
+    border: none;
+    transition: 0.3s;
+}
+
+.btns button:hover {
+    background-color: blue;
+}
+
+#adds {
+    background-color: #ebe084; 
+    min-height: 50vh;
+    text-align: center;
+    padding-top: 40px;
+    font-size: 2rem;
+    color: #333;
+}
+
+
+.task-card {
+    background-color: darkblue;
+    color: white;
+    margin: 15px auto;
+    width: 90%;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: all 0.5s ease;
+}
+
+
+.task-main-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+.info { flex-grow: 1; text-align: center; }
+.t-name { font-size: 1.8rem; margin-bottom: 5px; }
+.t-content { font-size: 1.1rem; color: #ddd; text-align: left; padding-left: 20px; }
+
+.arrow-toggle {
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+    color: #ff4500;
+}
+
+    
+.control-layer {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px;
+    background: rgba(255,255,255,0.1);
+    transition: max-height 0.4s ease, opacity 0.3s;
+}
+
+.control-layer.hidden, .edit-layer.hidden {
+    max-height: 0;
+    padding: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: none; 
+}
+
+
+.edit-layer {
+    background: #000066;
+    padding: 20px;
+    border-top: 2px solid #ff4500;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.edit-inputs { width: 100%; display: flex; flex-direction: column; align-items: center; }
+
+.input-group { margin-bottom: 10px; width: 80%; }
+.input-group label { font-size: 1rem; display: block; margin-bottom: 5px; }
+.input-group input { 
+    width: 100% !important; 
+    height: 35px !important; 
+    margin: 0 !important; 
+    font-size: 1rem !important; 
+}
+
+.close-edit {
+    position: absolute;
+    right: 20px;
+    font-size: 40px;
+    color: #ff4500;
+    cursor: pointer;
+}
+.save-change-btn {
+    background-color: #ffb300;
+    color: black;
+    border: none;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.delete-btn { background: #ff4444; color: white; border: none; padding: 8px 25px; cursor: pointer; border-radius: 4px; }
+.update-trigger { background: #4444ff; color: white; border: none; padding: 8px 25px; cursor: pointer; border-radius: 4px; }
+@media screen and (max-width: 767px) {
+    .main {
+        flex-direction: column;
+    }
+
+    header {
+        height: auto;
+    }
+
+    input, .btns button {
+        width: 95%;
+    }
+
+    label {
+        font-size: 1.5rem;
+    }
+}
